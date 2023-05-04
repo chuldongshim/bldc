@@ -16,7 +16,6 @@ since: 23.05.03 ~
     1_concept
     2_system
     3_hardware
-    4_software
 
 Indices and tables
 ==================
