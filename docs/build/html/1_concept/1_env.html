@@ -7,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>개발환경 &#8212; bldc  documentation</title>
   
@@ -38,11 +38,14 @@
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
     <script src="../_static/sphinx_highlight.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = '1_concept/1_env';</script>
-    <link rel="icon" href="../_static/favicon.ico"/>
+    <link rel="shortcut icon" href="../_static/favicon.ico"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="관리" href="2_issues.html" />
@@ -286,8 +289,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">개발전략</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">벤치마킹</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">개발전략</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">단계적 개발</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">문서관리</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">벤치마킹</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bldc-driver">bldc driver</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">타겟</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulink-bldc-stm32">Simulink + BLDC + Stm32</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulink-bldc-ti">Simulink + BLDC + TI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathworks">mathworks</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -303,6 +319,8 @@ document.write(`
 <h1>개발환경<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h1>
 <section id="id2">
 <h2>개발전략<a class="headerlink" href="#id2" title="Permalink to this heading">#</a></h2>
+<section id="id3">
+<h3>단계적 개발<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h3>
 <p>BLDC 위치제어를 최종 타겟으로 정의하며 단계적으로 개발을 진행한다.</p>
 <ol class="arabic simple">
 <li><p>1단계에서는 단순히 hall sensor를 사용하여 bldc 모터 정/역 회전을 구현하고,</p></li>
@@ -311,18 +329,57 @@ document.write(`
 <li><p>4단계에서 제어 성능을 높이기 위한 알고리즘을 추가로 구현한다.</p></li>
 </ol>
 </section>
-<section id="id3">
-<h2>벤치마킹<a class="headerlink" href="#id3" title="Permalink to this heading">#</a></h2>
-<p>bldc driver 인터페이스보드</p>
+<section id="id4">
+<h3>문서관리<a class="headerlink" href="#id4" title="Permalink to this heading">#</a></h3>
+<p>sphinx</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.sphinx-doc.org/en/master/">Sphinx documentation</a></p></li>
+<li><p><a class="reference external" href="https://docs.espressif.com/projects/arduino-esp32/en/latest/tutorials/blink.html#example-code">arduino esp32 documentation</a></p></li>
+</ul>
+<p>sphinx theme</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://sphinx-rtd-theme.readthedocs.io/en/latest/installing.html">sphinx_rtd_theme</a></p></li>
+<li><p><a class="reference external" href="https://github.com/espressif/sphinx_idf_theme">sphinx_idf_theme</a></p></li>
+</ul>
+</section>
+</section>
+<section id="id5">
+<h2>벤치마킹<a class="headerlink" href="#id5" title="Permalink to this heading">#</a></h2>
+<section id="bldc-driver">
+<h3>bldc driver<a class="headerlink" href="#bldc-driver" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>아두이노 기반</p></li>
 <li><p>TI</p></li>
 <li><p><a class="reference external" href="https://www.infineon.com/dgdl/Infineon-BLDC_shield_user_manual-UM-v01_00-EN.pdf?fileId=5546d462696dbf120169a0bb25396e7d">BLDC Shield with TLE9879QXA40 for Arduino</a></p></li>
 </ul>
-<p>MCU-Driver 통합 제어기</p>
+</section>
+</section>
+<section id="id6">
+<h2>타겟<a class="headerlink" href="#id6" title="Permalink to this heading">#</a></h2>
+<p>stm32와 tms320f28069 중 MBD로 가장 구현하기 쉬운 방법을 선택한다.</p>
+<section id="simulink-bldc-stm32">
+<h3>Simulink + BLDC + Stm32<a class="headerlink" href="#simulink-bldc-stm32" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
-<li></li>
+<li><p><a class="reference external" href="https://kr.mathworks.com/help/supportpkg/stmicroelectronicsstm32f4discovery/ug/senorless-stm-example.html">Sensorless Field-Oriented Control of PMSM Using STM32 Processor Based Boards</a></p></li>
+<li><p>mcb_open_loop_control_nucleo_f401re.slx, stm32f401re_pmsm_example.ioc</p></li>
 </ul>
+</section>
+<section id="simulink-bldc-ti">
+<h3>Simulink + BLDC + TI<a class="headerlink" href="#simulink-bldc-ti" title="Permalink to this heading">#</a></h3>
+<p>Field-Oriented Control with TI LAUNCHXL-F28069M, BOOSTXL-DRV8301 inverters and 2 PMS motors (현재 보유)</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://kr.mathworks.com/matlabcentral/fileexchange/49109-dual-motor-control-with-ti-launchxl-f28069m-launchpad">Dual Motor Control with TI LAUNCHXL-F28069M LaunchPad</a></p></li>
+</ul>
+</section>
+<section id="mathworks">
+<h3>mathworks<a class="headerlink" href="#mathworks" title="Permalink to this heading">#</a></h3>
+<p>mathworks BLDC 모터 제어 알고리즘의 이해</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://kr.mathworks.com/campaigns/offers/next/understanding-bldc-motor-control-algorithms.html">BLDC 모터의 역학</a></p></li>
+<li><p><a class="reference external" href="https://kr.mathworks.com/campaigns/offers/next/understanding-bldc-motor-control-algorithms/motor-speed-control.html?s_tid=dl_prv_nxt">제어기 연결 및 모터의 시뮬레이션 모델 구축</a></p></li>
+<li><p><a class="reference external" href="https://kr.mathworks.com/campaigns/offers/next/understanding-bldc-motor-control-algorithms/exploring-motor-behavior.html">시뮬레이션을 통해 모터 동작 살펴보기</a></p></li>
+</ul>
+</section>
 </section>
 </section>
 
@@ -374,8 +431,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">개발전략</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">벤치마킹</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">개발전략</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id3">단계적 개발</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id4">문서관리</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id5">벤치마킹</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#bldc-driver">bldc driver</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id6">타겟</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulink-bldc-stm32">Simulink + BLDC + Stm32</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#simulink-bldc-ti">Simulink + BLDC + TI</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#mathworks">mathworks</a></li>
+</ul>
+</li>
 </ul>
   </nav></div>
 
