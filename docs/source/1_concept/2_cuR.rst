@@ -15,20 +15,6 @@ BLDC 위치제어를 최종 타겟으로 정의하며 단계적으로 개발을 
 3. 3단계에서 위치제어를 구현한다.
 4. 4단계에서 제어 성능을 높이기 위한 알고리즘을 추가로 구현한다.
 
-문서관리
-------------------------
-
-sphinx
-
-* `Sphinx documentation <https://www.sphinx-doc.org/en/master/>`_
-* `arduino esp32 documentation <https://docs.espressif.com/projects/arduino-esp32/en/latest/tutorials/blink.html#example-code>`_
-
-
-sphinx theme
-
-* `sphinx_rtd_theme <https://sphinx-rtd-theme.readthedocs.io/en/latest/installing.html>`_
-* `sphinx_idf_theme <https://github.com/espressif/sphinx_idf_theme>`_
-
 ------------------------
 벤치마킹
 ------------------------
@@ -36,9 +22,23 @@ sphinx theme
 bldc driver
 ---------------------------
 
+벤치마킹
+
 * 아두이노 기반
 * TI
 * `BLDC Shield with TLE9879QXA40 for Arduino <https://www.infineon.com/dgdl/Infineon-BLDC_shield_user_manual-UM-v01_00-EN.pdf?fileId=5546d462696dbf120169a0bb25396e7d>`_
+
+Janus Controller - Brushless motor driver for ESP32 (FOC)
+
+* https://www.youtube.com/watch?v=tti3y8_cQ4o
+* https://github.com/byDagor/Janus-Controller
+* https://hackaday.io/project/173519-janus-brushless-controller
+	
+구동원리
+
+* https://www.youtube.com/watch?v=uOQk8SJso6Q
+* https://mikrodunya.wordpress.com/2021/08/25/esp32-bldc-alan-oryantasyonlu-kontrol-foc-1-bolum/
+* https://mikrodunya.wordpress.com/2021/08/20/esp32-ile-fircasiz-dc-motor-bldc-kontrolu/
 
 
 ------------------------
